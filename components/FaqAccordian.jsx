@@ -16,6 +16,7 @@ export const FaqAccordian = () => {
   return (
     <Flex w='100%' direction='column'>
       <Box
+        h='66px'
         bgImage="url('wave.svg')"
         py={{ lg: '6rem', sm: '2rem' }}
         w='100%'

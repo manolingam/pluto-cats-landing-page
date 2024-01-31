@@ -16,7 +16,7 @@ export const Footer = () => {
     >
       <Icons.Twitter fill='#ffab57' />
       <Text color='#ebdcd5' fontFamily='honk' fontSize='24px'>
-        Nouns Cats
+        Pluto Cats
       </Text>
     </Flex>
   );

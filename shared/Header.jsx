@@ -1,6 +1,7 @@
 'use client';
 
-import { Flex, Text, Button } from '@chakra-ui/react';
+import { Flex, Text, Button, HStack } from '@chakra-ui/react';
+import Icons from '@/Icons';
 
 export const Header = () => {
   return (
@@ -8,8 +9,8 @@ export const Header = () => {
       direction='row'
       alignItems='center'
       justifyContent='space-between'
-      py='2rem'
-      px='10vw'
+      py='1rem'
+      px='8vw'
     >
       <Flex direction='column' position='relative'>
         <Text
@@ -18,7 +19,7 @@ export const Header = () => {
           fontFamily='honk'
           fontSize={{ lg: '36px', sm: '24px' }}
         >
-          Nouns
+          Pluto
         </Text>
         <Text
           position='absolute'
@@ -32,18 +33,22 @@ export const Header = () => {
         </Text>
       </Flex>
 
-      <Button
-        py='0px'
-        px='8px'
-        fontSize={{ lg: '18px', sm: '12px' }}
-        bg='#bf5947'
-        fontFamily='jetbrains'
-        color='white'
-        isDisabled
-        _hover={{ bg: '#bf5947' }}
-      >
-        Coming soon..
-      </Button>
+      <HStack justifyContent='space-between' mt='15px'>
+        <Button
+          py='0px'
+          px='8px'
+          fontSize={{ lg: '18px', sm: '12px' }}
+          fontFamily='jetbrains'
+          bg='#5973fe'
+          color='white'
+          _hover={{ opacity: '0.8' }}
+        >
+          <HStack>
+            <Icons.Discord fill='white' width='25px' />{' '}
+            <Text>Join Discord</Text>
+          </HStack>
+        </Button>
+      </HStack>
     </Flex>
   );
 };

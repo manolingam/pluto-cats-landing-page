@@ -1,65 +1,6 @@
 'use client';
 
-import { Flex, chakra, Text, HStack, Button } from '@chakra-ui/react';
-
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-
-import Icons from '@/Icons';
-
-const ChakraImage = chakra(motion.img);
-
-const ImageSequencer = () => {
-  const sequence = Array.from({ length: 6 }, (_, index) => index + 1);
-
-  const [index1, setIndex1] = useState(0);
-  const [index2, setIndex2] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex1((prevIndex1) => (prevIndex1 + 1) % sequence.length);
-    }, 2000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex2((prevIndex2) => (prevIndex2 + 1) % sequence.length);
-    }, 2000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-  return (
-    <Flex
-      direction='row'
-      alignItems='center'
-      justifyContent='center'
-      overflow='hidden'
-      position='relative'
-      w={{ lg: `250px`, sm: '150px' }}
-    >
-      <motion.div style={{ display: 'flex', flexDirection: 'row' }}>
-        <ChakraImage
-          key={sequence[index1]}
-          src={`${sequence[index1]}.png`}
-          w={{ lg: '250px', sm: '150px' }}
-          mb={{ lg: '4rem', sm: '2rem' }}
-        />
-        <ChakraImage
-          key={sequence[index2]}
-          src={`${sequence[index2]}.png`}
-          w={{ lg: '250px', sm: '150px' }}
-          mb={{ lg: '4rem', sm: '2rem' }}
-        />
-      </motion.div>
-    </Flex>
-  );
-};
+import { Flex, Text, Image as ChakraImage } from '@chakra-ui/react';
 
 export const Hero = () => {
   return (
@@ -71,12 +12,39 @@ export const Hero = () => {
       px='10vw'
       py='2rem'
     >
-      <ImageSequencer />
+      <Flex
+        direction='row'
+        boxShadow='
+       inset 5px 5px 10px #e4e0d9,
+       inset -5px -5px 10px #ffffff
+      '
+        bg='#F8F4EC'
+        borderRadius='17px'
+        mb={{ lg: '2rem', sm: '2rem' }}
+        p='10px 5px 0px 5px'
+      >
+        <ChakraImage
+          src={`4.png`}
+          w={{ lg: '230px', sm: '100px' }}
+          filter='drop-shadow(0 0 0.75rem #1A202C)'
+        />
+        <ChakraImage
+          src={`5.png`}
+          w={{ lg: '230px', sm: '100px' }}
+          filter='drop-shadow(0 0 0.75rem #1A202C)'
+        />
+        <ChakraImage
+          src={`6.png`}
+          w={{ lg: '230px', sm: '100px' }}
+          filter='drop-shadow(0 0 0.75rem #1A202C)'
+        />
+      </Flex>
 
       <Text
         fontFamily='rubik'
         fontSize={{ lg: '36px', sm: '28px' }}
         textAlign='center'
+        bgColor='#F8F4EC'
       >
         Lorem Ipsum
       </Text>
@@ -88,23 +56,11 @@ export const Hero = () => {
         mt='5px'
         w={{ lg: '70%', sm: '100%' }}
         opacity='0.7'
+        bgColor='#F8F4EC'
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua
       </Text>
-      <HStack justifyContent='space-between' mt='2rem'>
-        <Button
-          fontFamily='jetbrains'
-          bg='#5973fe'
-          color='white'
-          _hover={{ opacity: '0.8' }}
-        >
-          <HStack>
-            <Icons.Discord fill='white' width='25px' />{' '}
-            <Text fontSize={{ lg: '18px', sm: '12px' }}>Join Discord</Text>
-          </HStack>
-        </Button>
-      </HStack>
     </Flex>
   );
 };

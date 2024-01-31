@@ -11,7 +11,9 @@ export default function HomePage() {
     <Flex
       direction='column'
       justifyContent='space-between'
-      bg='#F8F4EC'
+      bgColor='#F8F4EC'
+      bgImage='radial-gradient(#1A202C 0.75px, #F8F4EC 0.75px)'
+      bgSize='15px 15px'
       minH='100vh'
     >
       <Header />
