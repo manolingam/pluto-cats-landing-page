@@ -7,47 +7,49 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Box
+  SimpleGrid
 } from '@chakra-ui/react';
 
 import { FAQs } from '@/utils/constants';
+import Icons from '@/Icons';
 
 export const FaqAccordian = () => {
   return (
-    <Flex w='100%' direction='column'>
-      <Box
-        h='66px'
-        bgImage="url('wave.svg')"
-        py={{ lg: '6rem', sm: '2rem' }}
-        w='100%'
-      ></Box>
-
-      <Accordion
-        bg='#1A202C'
-        allowToggle
-        minH={{ lg: '400px', sm: '200px' }}
-        px={{ lg: '20vw', sm: '10vw' }}
-        pt='2rem'
-        color='#ebdcd5'
-      >
+    <Flex
+      w='100%'
+      h='100vh'
+      direction='column'
+      justifyContent='space-evenly'
+      className='scroll-snap-container'
+    >
+      <Accordion allowToggle px={{ lg: '15vw', sm: '0' }} color='#e97058'>
         {FAQs.map((faq, i) => {
           return (
             <AccordionItem border='none' key={i} py='10px'>
               <AccordionButton
                 fontFamily='rubik'
-                fontSize={{ lg: '20px', sm: '16px' }}
+                fontSize={{ lg: '24px', sm: '16px' }}
               >
                 {faq.q}
                 <AccordionIcon ml='auto' />
               </AccordionButton>
 
-              <AccordionPanel pb={4} fontFamily='jetbrains'>
+              <AccordionPanel
+                pb={4}
+                fontFamily='jetbrains'
+                color='white'
+                opacity='0.7'
+              >
                 {faq.a}
               </AccordionPanel>
             </AccordionItem>
           );
         })}
       </Accordion>
+      <SimpleGrid columns='2' placeItems='center' mx='auto' gap='2' mt='2rem'>
+        <Icons.Twitter fill='#ffab57' />
+        <Icons.Discord fill='#ffab57' />
+      </SimpleGrid>
     </Flex>
   );
 };

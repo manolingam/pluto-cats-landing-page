@@ -1,6 +1,6 @@
 const Discord = ({
-  width = '34',
-  height = '25',
+  width = '31',
+  height = '31',
   fill = 'white',
   opacity = '1'
 }) => (
@@ -19,22 +19,18 @@ const Discord = ({
 );
 
 const Twitter = ({
-  width = '31',
-  height = '31',
+  width = '40',
+  height = '35',
   fill = 'white',
   opacity = '1'
 }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 24 26'
     width={width}
     height={height}
-    viewBox='0 0 24 24'
     fill={fill}
     opacity={opacity}
-    stroke='currentColor'
-    strokeWidth='2'
-    strokeLinecap='round'
-    strokeLinejoin='round'
     className='lucide lucide-twitter'
   >
     <path d='M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z' />

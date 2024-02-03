@@ -2,23 +2,19 @@
 
 import { Flex } from '@chakra-ui/react';
 
-import { Header } from '@/shared/Header';
-import { Home } from '@/views/Home';
-import { Footer } from '@/shared/Footer';
+import { Hero } from '@/components/Hero';
+import { FaqAccordian } from '@/components/FaqAccordian';
 
 export default function HomePage() {
   return (
     <Flex
       direction='column'
+      px='10vw'
       justifyContent='space-between'
-      bgColor='#F8F4EC'
-      bgImage='radial-gradient(#1A202C 0.75px, #F8F4EC 0.75px)'
-      bgSize='15px 15px'
-      minH='100vh'
+      bgColor='#1c1c1e'
     >
-      <Header />
-      <Home />
-      <Footer />
+      <Hero />
+      <FaqAccordian />
     </Flex>
   );
 }

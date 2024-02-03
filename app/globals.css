@@ -1,6 +1,12 @@
 html {
-  scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-container {
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -9,12 +15,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #59342b;
+  background: #e97058;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #59342b;
+  background: #e97058;
 }
 
 :focus-visible {
